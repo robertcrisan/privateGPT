@@ -4,9 +4,8 @@ FROM python:3.11.6-slim-bookworm as base
 
 # Install poetry
 RUN pip install pipx
-RUN CMAKE_ARGS="-DLLAMA_BLAS=ON -DLLAMA_BLAS_VENDOR=OpenBLAS" pip install llama-cpp-python
 RUN python3 -m pipx ensurepath
-RUN pipx install poetry
+RUN pipx install poetry llama-cpp-python
 ENV PATH="/root/.local/bin:$PATH"
 ENV PATH=".venv/bin/:$PATH"
 

@@ -1,7 +1,7 @@
 FROM python:3.11.6-slim-bookworm as base
 
 # Install poetry
-RUN pip install pipx
+RUN pip install pipx llama-cpp-python
 RUN python3 -m pipx ensurepath
 RUN pipx install poetry
 ENV PATH="/root/.local/bin:$PATH"
